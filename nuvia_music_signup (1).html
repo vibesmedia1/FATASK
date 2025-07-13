@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nuvia Music Streaming</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+    :root {
+      --primary-color: #ffffff;
+      --accent-color: #5ee807;
+      --highlight-color: #B8FF25;
+      --text-color: #ffffff;
+      --background-color: #0A0F0B;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--background-color);
+      background-image: url('Redtp.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: var(--text-color);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      font-size: 12px;
+    }
+
+    .title,
+    h1,
+    .description,
+    form {
+      text-align: center;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .title {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--highlight-color);
+      margin-bottom: 0.3rem;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .description {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--text-color);
+      opacity: 0.9;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.6rem 0.9rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      color: var(--text-color);
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--highlight-color);
+      box-shadow: 0 0 0 2px rgba(184, 255, 37, 0.3);
+    }
+
+    .mil-btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      border-radius: 10px;
+      font-family: Poppins;
+      font-weight: 600;
+      color: #fff;
+      transition: background-color 0.3s ease;
+      box-shadow: inset 0px 0px 10px 1px #5ee807, inset 0 0 7px 3px #ffffff;
+      padding: 0.8rem 1.2rem;
+      font-size: 0.9rem;
+      width: 100%;
+      margin-top: 1rem;
+      text-decoration: none;
+    }
+
+    .mil-btn:hover {
+      filter: brightness(110%);
+      background-color: #98d1a0;
+      box-shadow: unset;
+      color: #0c191c;
+    }
+
+    .mil-btn.mil-add-arrow:after {
+      content: "\f061";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-left: 15px;
+      font-size: 12px;
+      color: #B8FF25;
+    }
+
+    .card.review-section {
+      background-color: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 1.5rem;
+      max-width: 400px;
+      margin: 2rem auto;
+      color: var(--text-color);
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .review-section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: var(--highlight-color);
+    }
+
+    .review-score {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--text-color);
+    }
+
+    .stars {
+      font-size: 1.5rem;
+      color: gold;
+    }
+
+    .chat-popup-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .chat-popup {
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 0.8rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-color);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .chat-popup img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    #chat-message {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">Music Streaming Platform</div>
+  <h1>Nuvia Music Streaming</h1>
+  <p class="description">Your favourite music, all in one place.</p>
+
+  <form id="signupForm">
+    <div class="form-group">
+      <label for="fullname">Fullname</label>
+      <input type="text" id="fullname" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <label for="username">Preferred Username</label>
+      <input type="text" id="username" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <label for="Email">Email</label>
+      <input type="Email" id="Email" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" class="form-control" required />
+    </div>
+
+    <a href="https://etherealweb.site/signup" class="mil-btn mil-m mil-add-arrow mil-adaptive-right">Join Now!</a>
+  </form>
+
+  <div class="card review-section">
+    <h2>Customer Reviews</h2>
+    <div class="review-score" id="score">2.00</div>
+    <div class="stars" id="stars">★★☆☆☆</div>
+  </div>
+
+  <div class="chat-popup-container">
+    <div class="chat-popup" id="chat">
+      <img src="R1.jpg" alt="User Profile">
+      <span id="chat-message">Hello</span>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      window.location.href = 'Gate.html';
+    });
+
+    let reviewScore = 2;
+    let interval = setInterval(() => {
+      if (reviewScore < 5) {
+        reviewScore++;
+        document.getElementById("score").textContent = reviewScore.toFixed(2);
+        document.getElementById("stars").textContent = '★'.repeat(reviewScore) + '☆'.repeat(5 - reviewScore);
+      } else {
+        clearInterval(interval);
+      }
+    }, 4000);
+
+    const messages = [
+      "I just withdraw🤯",
+      "I Registered successfully, thank you!",
+      "I have earned 300k this week!!",
+      "Nuvia Streams Change my life for good",
+    ];
+    let index = 0;
+    const chat = document.getElementById('chat');
+    const messageEl = document.getElementById('chat-message');
+
+    function showNextChat() {
+      chat.classList.remove('slide-out');
+      chat.style.display = 'flex';
+      messageEl.textContent = messages[index];
+      setTimeout(() => {
+        chat.classList.add('slide-out');
+        setTimeout(() => {
+          chat.style.display = 'none';
+          index = (index + 1) % messages.length;
+        }, 500);
+      }, 4000);
+    }
+
+    showNextChat();
+    setInterval(showNextChat, 8000);
+  </script>
+</body>
+</html>
