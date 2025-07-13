@@ -6,20 +6,19 @@
   <title>Nuvia - Upgrade Your Music Experience</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
     :root {
       --primary-color: #ffffff;
       --highlight-color: #B8FF25;
       --accent-color: #5ee807;
       --site-bg: #0A0F0B;
-      --btn-red: #5ee807;
-      --btn-yellow: #B8FF25;
       --premium-color: #B8FF25;
       --card-bg-gradient: radial-gradient(circle at center, #1b512d, #0f1c12);
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
       background-color: var(--site-bg);
@@ -108,35 +107,36 @@
     }
 
     .btn {
-      padding: 0.9rem;
-      font-size: 0.9rem;
-      font-weight: 600;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       border: none;
-      border-radius: 8px;
-      text-align: center;
-      transition: all 0.3s ease;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: #fff;
+      transition: background-color 0.3s ease;
+      box-shadow: inset 0px 0px 10px 1px #5ee807, inset 0 0 7px 3px #ffffff;
+      padding: 0.8rem 1.2rem;
+      font-size: 0.9rem;
       text-decoration: none;
-      cursor: pointer;
+      width: 100%;
     }
 
-    .btn-basic {
-      background-color: var(--btn-red);
-      color: var(--site-bg);
-    }
-
-    .btn-basic:hover {
+    .btn:hover {
+      filter: brightness(110%);
       background-color: #98d1a0;
-      transform: scale(1.02);
+      box-shadow: unset;
+      color: #0c191c;
     }
 
-    .btn-premium {
-      background-color: var(--btn-yellow);
-      color: #000;
-    }
-
-    .btn-premium:hover {
-      background-color: #e6ff78;
-      transform: scale(1.02);
+    .btn::after {
+      content: "\f061";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-left: 15px;
+      font-size: 12px;
+      color: #B8FF25;
     }
 
     .testimonial-carousel {
@@ -204,6 +204,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 </head>
 <body>
   <div class="container">
@@ -230,8 +231,8 @@
     </div>
 
     <div class="btn-group">
-      <a href="PGateway.html" class="btn btn-premium">Subscribe to Premium</a>
-      <a href="PGateway.html" class="btn btn-basic">Subscribe to Basic</a>
+      <a href="PGateway.html" class="btn">Subscribe to Premium</a>
+      <a href="PGateway.html" class="btn">Subscribe to Basic</a>
     </div>
 
     <div class="testimonial-carousel">
