@@ -104,6 +104,7 @@
       gap: 1rem;
       margin-top: 1rem;
       margin-bottom: 2rem;
+      align-items: center;
     }
 
     .btn {
@@ -120,7 +121,8 @@
       padding: 0.8rem 1.2rem;
       font-size: 0.9rem;
       text-decoration: none;
-      width: 100%;
+      width: 80%;
+      max-width: 300px;
     }
 
     .btn:hover {
@@ -154,6 +156,16 @@
       border-radius: 8px;
       padding: 1.5rem;
       font-style: italic;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
     }
 
     .testimonial.active {
@@ -163,8 +175,8 @@
 
     .testimonial-author {
       display: block;
-      text-align: right;
-      margin-top: 1rem;
+      text-align: left;
+      margin-top: 0.5rem;
       font-style: normal;
       font-weight: 600;
       color: #cccccc;
@@ -200,7 +212,7 @@
       }
 
       .btn {
-        flex: 1;
+        flex: none;
       }
     }
   </style>
@@ -237,24 +249,39 @@
 
     <div class="testimonial-carousel">
       <div class="testimonial active">
-        "Since joining Nuvia Premium, I've not only enjoyed unlimited music but also earned over N250,000 in rewards just by listening to my favorite artists. The sound quality is exceptional, and the exclusive content makes it worth every naira!"
-        <span class="testimonial-author">- Adeola K., Lagos</span>
+        <img src="R1.jpg" alt="Adeola">
+        <div>
+          "Since joining Nuvia Premium, I've not only enjoyed unlimited music but also earned over N250,000 in rewards just by listening to my favorite artists. The sound quality is exceptional, and the exclusive content makes it worth every naira!"
+          <span class="testimonial-author">- Adeola K., Lagos</span>
+        </div>
       </div>
       <div class="testimonial">
-        "Nuvia completely changed how I enjoy music. I earn while vibing during my commute. This platform is genius!"
-        <span class="testimonial-author">- Tolu O., Abuja</span>
+        <img src="R2.jpg" alt="Tolu">
+        <div>
+          "Nuvia completely changed how I enjoy music. I earn while vibing during my commute. This platform is genius!"
+          <span class="testimonial-author">- Tolu O., Abuja</span>
+        </div>
       </div>
       <div class="testimonial">
-        "As a DJ, access to unlimited high-quality audio has been a blessing. And the extra earnings? Unbelievable!"
-        <span class="testimonial-author">- DJ Remy, Port Harcourt</span>
+        <img src="R3.jpg" alt="DJ Remy">
+        <div>
+          "As a DJ, access to unlimited high-quality audio has been a blessing. And the extra earnings? Unbelievable!"
+          <span class="testimonial-author">- DJ Remy, Port Harcourt</span>
+        </div>
       </div>
       <div class="testimonial">
-        "I was skeptical at first, but this works! I've made over N100k just listening to what I already love!"
-        <span class="testimonial-author">- Grace M., Ibadan</span>
+        <img src="R4.jpg" alt="Grace">
+        <div>
+          "I was skeptical at first, but this works! I've made over N100k just listening to what I already love!"
+          <span class="testimonial-author">- Grace M., Ibadan</span>
+        </div>
       </div>
       <div class="testimonial">
-        "Premium feels premium. Smooth, crisp sound and more cash for my playlists. I’m recommending to everyone!"
-        <span class="testimonial-author">- Felix A., Enugu</span>
+        <img src="R5.jpg" alt="Felix">
+        <div>
+          "Premium feels premium. Smooth, crisp sound and more cash for my playlists. I’m recommending to everyone!"
+          <span class="testimonial-author">- Felix A., Enugu</span>
+        </div>
       </div>
     </div>
 
