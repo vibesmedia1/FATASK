@@ -50,6 +50,13 @@
       text-align: center;
       font-size: 1.2rem;
       color: var(--highlight-color);
+      margin-bottom: 0.2rem;
+    }
+
+    h1#selected-plan {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--accent-color);
       margin-bottom: 1rem;
     }
 
@@ -163,6 +170,7 @@
   <div class="container">
     <div class="icon-lock">🔒</div>
     <h2>Secured Payment Gateway</h2>
+    <h1 id="selected-plan"></h1>
 
     <div class="notice">
       <span>Proceed to your bank app to complete this transaction</span>
@@ -210,6 +218,11 @@
         alert('Failed to copy text');
       });
     }
+
+    // Get the ?plan= parameter and display it
+    const params = new URLSearchParams(window.location.search);
+    const plan = params.get('plan');
+    document.getElementById("selected-plan").textContent = plan ? decodeURIComponent(plan) : "";
   </script>
 </body>
 </html>
