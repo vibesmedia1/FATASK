@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure Payment Gateway</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+    :root {
+      --primary-color: #ffffff;
+      --accent-color: #5ee807;
+      --highlight-color: #B8FF25;
+      --text-color: #ffffff;
+      --background-color: #0A0F0B;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      padding: 2rem 1rem;
+      font-size: 13px;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.03);
+      padding: 1.2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(94, 232, 7, 0.2);
+    }
+
+    .icon-lock {
+      font-size: 1.5rem;
+      color: var(--accent-color);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--highlight-color);
+      margin-bottom: 1rem;
+    }
+
+    .notice {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 0.6rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-box {
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .payment-info, .payment-infoo {
+      background: linear-gradient(90deg, #0f1c0f, #173117);
+      color: var(--text-color);
+      padding: 0.8rem;
+      border-radius: 10px;
+      margin-bottom: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      box-shadow: inset 0 0 6px #5ee807;
+    }
+
+    .payment-infoo {
+      background-color: rgba(255, 0, 0, 0.15);
+      color: #ff5252;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .ret {
+      text-align: center;
+    }
+
+    .warning-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 0.8rem;
+      font-size: 0.85rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--highlight-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 1.5rem;
+      background-color: transparent;
+      color: #ffffff;
+      font-size: 0.95rem;
+      padding: 0.9rem;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: inset 0px 0px 10px 1px #5ee807, inset 0 0 7px 3px #ffffff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .submit-btn:hover {
+      filter: brightness(110%);
+      background-color: #98d1a0;
+      box-shadow: unset;
+      color: #0c191c;
+    }
+
+    .copy-icon, .info-icon {
+      font-size: 0.85rem;
+      background: none;
+      border: none;
+      color: var(--accent-color);
+      cursor: pointer;
+    }
+
+    .info-icon {
+      color: var(--highlight-color);
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1rem;
+      }
+      h2 {
+        font-size: 1rem;
+      }
+      .submit-btn {
+        font-size: 0.85rem;
+        padding: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon-lock">🔒</div>
+    <h2>Secured Payment Gateway</h2>
+
+    <div class="notice">
+      <span>Proceed to your bank app to complete this transaction</span>
+      <button class="info-icon" onclick="copyText('7048831912')" title="Copy Account Number">ℹ️</button>
+    </div>
+
+    <div class="section-box">
+      <div class="payment-info">
+        <span id="acct-num">7048831912</span>
+        <button class="copy-icon" onclick="copyText('7048831912')">📋 Copy</button>
+      </div>
+      <div class="payment-info">
+        <span id="bank-name">Moniepoint</span>
+        <button class="copy-icon" onclick="copyText('Moniepoint')">📋 Copy</button>
+      </div>
+      <div class="payment-info">
+        <span id="acct-name">Godwin wisdom amadi</span>
+        <button class="copy-icon" onclick="copyText('Godwin wisdom amadi')">📋 Copy</button>
+      </div>
+
+      <div class="payment-infoo">
+        <p class="ret">⚠️ Do not pay with OPAY</p>
+      </div>
+
+      <div class="warning-box">
+        <span>Click on each to copy the account details, then proceed to your bank app to make the payment. When done, come back here and click the button below to confirm your payment. Your login will be activated immediately after payment.<br><br><strong>Complete this payment within 1 hour.</strong></span>
+        <span class="info-icon">⏰</span>
+      </div>
+    </div>
+
+    <a
+      class="submit-btn"
+      href="https://wa.me/2349121546934?text=Hello%20admin,%20I%20just%20made%20payment%20for%20nuvia%20registration%20on%20the%20payment%20web%20gateway."
+      target="_blank"
+    >
+      SUBMIT PROOF OF PAYMENT
+    </a>
+  </div>
+
+  <script>
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Copied: ' + text);
+      }).catch(err => {
+        alert('Failed to copy text');
+      });
+    }
+  </script>
+</body>
+</html>
