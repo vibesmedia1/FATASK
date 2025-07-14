@@ -190,6 +190,10 @@
       color: #aaa;
     }
 
+    h2 {
+      color: #B8FF25;
+      font-size: 1.8rem;
+
     .security-badge {
       display: flex;
       align-items: center;
@@ -222,6 +226,7 @@
   <div class="container">
     <div class="hero-text">
       <h1>SUMMARY OF HOW ETHEREAL💚 WORKS</h1>
+      <h2 id="displayName">Loading...</h2>
       <p>Ethereal is a smart digital platform that rewards you for things you 
         already do every day — like: 📱 Reading short articles
         🎮 Playing mobile games (e.g., Candy Crush)
@@ -355,6 +360,13 @@
     }
 
     setInterval(showNextTestimonial, 5000);
+
+    const name = localStorage.getItem('etherealFullname');
+    if (name) {
+      document.getElementById('displayName').textContent = `Welcome, ${name}!`;
+    } else {
+      document.getElementById('displayName').textContent = "Name not found.";
+    }
   </script>
 </body>
 </html>
